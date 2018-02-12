@@ -5,6 +5,7 @@ $(document).ready(function(){
 	let powerUp = false;
 	let id;
 	let videos = []; //Put local address of videos in this array.
+	let desArr = []; //Put video descriptions here.
 	let timeArr = [];
 	const crtOn = new Audio("http://www.jarrodyellets.com/sounds/CRTOn.mp3");
 	const crtOff = new Audio("http://www.jarrodyellets.com/sounds/CRTOff.mp3");
@@ -73,7 +74,7 @@ $(document).ready(function(){
 			$(".screen").empty();
 			for (var j = 0; j < videos.length; j++){
 				let channelNum = j + 2;
-				divString += "<div class='channelLine'><div class='channelNumber'>"+ channelNum + ". </div><div class='description'>" + videos[j] + "...</div></div>"
+				divString += "<div class='channelLine'><div class='channelNumber'>"+ channelNum + ". </div><div class='description'>" + desArr[j] + "...</div></div>"
 			}
 			$(".screen").append("<div class='channelList onScreen'><h4>Channel Guide</h4><div class='channelNumber'>1. Channel Guide</div><div class='time'>" + now.toDateString() + " | " + time +"</div>" + divString);
 			$(".screen").append("<div class='channels'>" + channel + ". Channel Guide</div>");
